@@ -26,3 +26,5 @@ add-brake-row: ## add some row for slave [make add-brake-row]
 	make check-rows
 	echo 'Done'
 
+update-slave: ## migration up struct staff table for slave [make update-slave]
+	docker-compose exec mysql-$(SECOND_SVC) mysql -u root -p$(MYSQL_ROOT_PASSWORD) $(MYSQL_DATABASE) -e "ALTER TABLE staff ADD COLUMN email VARCHAR(30);"
