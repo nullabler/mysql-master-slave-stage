@@ -3,6 +3,7 @@
 init: ## init [make init]
 	make up build=1
 	.build/dev/mysql/setup.sh
+	make example-table
 
 up: ## up project [make up] [make up build=1 watch=1]
 ifdef build
